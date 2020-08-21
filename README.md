@@ -31,7 +31,7 @@ Other cases during daily research may also poped up. For example, you have two s
 
   Run `$python Subtract_meta.py -h or ./Subtract_meta.py --help` 
   
-  This will gave
+  This will give
 
  `usage: Subtract_meta.py [-h] --masf MASF [--masA1 MASA1] [--masA2 MASA2]
                      [--masEff MASEFF] [--masOR MASOR] [--masisORSE]
@@ -54,11 +54,6 @@ Other cases during daily research may also poped up. For example, you have two s
     Notes:
         1. Only common SNPs in the two file will be analyzed. The SNPs that
         exist only in the original meta-analysis results should be added back.
-
-
-    Author: Yunpeng Wang, yunpeng.wng@gmail.com;
-            Jiangming Sun, sunjiangming@gmail.com
-    Data: 1st Aug, 2020
 ```
 
 Optional arguments:
@@ -88,7 +83,7 @@ Optional arguments:
   
 - Sepcific arguments for sample size weighted meta-analysis: 
 ``` 
-  Either effect/Odds ratio should be given for meta and sub-study, respectively
+  Either effect or Odds ratio should be given for meta and sub-study, respectively
 
   --masEff MASEFF  (conditional) Meta-analysis result effect (of A1) column name, default='Beta'
   
@@ -141,11 +136,22 @@ Optional arguments:
   --top2 TOP2      (optional) max -log10(P) for subtracted results to plot in the manhattan (default from the data)
  ```
 # Output
-file1 desc1
-file2 desc2
 
-Example 
-.. figure:: https://raw.githubusercontent.com/sunjiangming/deMeta/master/test/Subtract_UKB_Out_manhattan.png?sanitize=true
-   :alt: Matrix Factorizaion
-.. figure:: https://raw.githubusercontent.com/sunjiangming/deMeta/master/test/Subtract_UKB_Out_qq.png?sanitize=true
-   :alt: Matrix Factorizaion
+Output files:
+
+1. Obtained summary statstics
+
+2. Manhattan plots for before and after removing the sub-study
+
+3. QQ-plots for before and after removing the sub-study
+
+# Example
+
+As a demonstration we applied deMeta to the summary statistics of the GWAS for body mass index (BMI) (Locke, et al., 2015; Yengo, et al., 2018). The Yengo et al data is a meta-analysis results of the Locke et al study and the UK biobank data. Both the Yengo et al and the Locke et al data were ware downloaded from https://portals.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium_data_files. The inverse of the inverse variance weighted function of deMeta was applied to obtain summary statistics for UK biobank data
+
+- QQ-plot for before and after removing the UKB samples from the GIANT BMI GWAS studies 
+![Image](../master/test/BMI_qq.png?raw=true)
+
+- Manhattan plot for before and after removing the UKB samples from the GIANT BMI GWAS studies 
+![Image](../master/test/BMI_manhattan.png?raw=true)
+
