@@ -1,6 +1,7 @@
 # deMeta
 Reverse the Meta-analysis mostly used by GWAS.
 
+
 A typical scenario is for using GWAS consortium meta-analysis results for a contributing group.
 For example, a group has performed GWAS on its own samples, and contributed the GWAS summary statistics to a Consortium. If the group wants to perform polygenic risk prediction on it sample, it will need the summary statistics from all contributing groups except its own. Two options may achieve this goal, 1.) The analysts of the consortium can re-do the meta exlcuding the sample from requesting group; 2.) the consortium share sub-study summary statistics with each contributing groups. The first option will incur heavey workload to the analysts if more than 1 substudies wanted to be removed. The second option may sometimes not practical due to data regulation.
 
