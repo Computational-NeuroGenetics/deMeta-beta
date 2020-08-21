@@ -141,13 +141,15 @@ Output files:
 
 1. Obtained summary statstics
 
-2. Manhattan plots for before and after removing the sub-study
+2. Manhattan plot for before and after removing the sub-study
 
-3. QQ-plots for before and after removing the sub-study
+3. QQ-plot for before and after removing the sub-study
 
 # Example
 
-As a demonstration we applied deMeta to the summary statistics of the GWAS for body mass index (BMI) (Locke, et al., 2015; Yengo, et al., 2018). The Yengo et al data is a meta-analysis results of the Locke et al study and the UK biobank data. Both the Yengo et al and the Locke et al data were ware downloaded from https://portals.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium_data_files. The inverse of the inverse variance weighted function of deMeta was applied to obtain summary statistics for UK biobank data
+As a demonstration we applied deMeta to the summary statistics of the GWAS for body mass index (BMI) (Locke, et al., 2015; Yengo, et al., 2018). The Yengo et al data is a meta-analysis results of the Locke et al study and the UK biobank data. Both the Yengo et al and the Locke et al data were ware downloaded from https://portals.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium_data_files. 
+
+The inverse of the inverse variance weighted function of deMeta was applied to obtain summary statistics for UK biobank data.
 
 - QQ-plot for before and after removing the UKB samples from the GIANT BMI GWAS studies 
 ![Image](../master/test/BMI_qq.png?raw=true)
