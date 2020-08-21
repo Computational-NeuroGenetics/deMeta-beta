@@ -17,13 +17,23 @@ Other cases during daily research may also poped up. For example, you have two s
 
   `git clone https://github.com/Computational-NeuroGenetics/deMeta`
 
-  Once Python and its dependencies have been installed, running
- 
-  `./Subtract_meta.py --help or ./PRScs.py -h`
+- Dependencies:
+  
+  pandas
+  
+  numpy
+  
+  matplotlib
+  
+  scipy
+  
+# Using deMeta
 
+  Run `$python Subtract_meta.py -h or ./Subtract_meta.py --help` 
+  
+  This will gave
 
-`$python Subtract_meta.py -h
-usage: Subtract Meta [-h] --masf MASF [--masA1 MASA1] [--masA2 MASA2]
+ `usage: Subtract_meta.py [-h] --masf MASF [--masA1 MASA1] [--masA2 MASA2]
                      [--masEff MASEFF] [--masOR MASOR] [--masisORSE]
                      [--masP MASP] [--masSE MASSE] [--masV MASV]
                      [--masCHR MASCHR] [--masPOS MASPOS] [--masN MASN]
@@ -49,24 +59,47 @@ usage: Subtract Meta [-h] --masf MASF [--masA1 MASA1] [--masA2 MASA2]
     Author: Yunpeng Wang, yunpeng.wng@gmail.com;
             Jiangming Sun, sunjiangming@gmail.com
     Data: 1st Aug, 2020
+ ```
 
-optional arguments:
+Optional arguments:
+
   -h, --help       show this help message and exit
-  --masf MASF      Meta-analysis result file name
-  --masA1 MASA1    Meta-analysis result effect allele column name
-  --masA2 MASA2    Meta-analysis result the other allele column name
-  --masEff MASEFF  Meta-analysis result effect (of A1) column name
-  --masOR MASOR    Meta-analysis result Odds ratio (of A1) column name
-  --masisORSE      Is the Meta-analysis result SE on OR scale, default on ln(OR) scale
-  --masP MASP      Meta-analysis result p value (of A1) column name
-  --masSE MASSE    Meta-analysis result standard error (of Beta) column name
-  --masV MASV      Meta-analysis result variance (of Beta) column name
-  --masCHR MASCHR  Chromosome number column name in original Meta-analysis results
-  --masPOS MASPOS  Genomic position column name in original Meta-analysis results
-  --masN MASN      Meta-analysis result Sample size column name
-  --masZ MASZ      Meta-analysis result Z score column name
+  
+  --masf MASF      (required) Meta-analysis result file name
+  
+  --masA1 MASA1    (required) Meta-analysis result effect allele column name, default='A1'
+  
+  --masA2 MASA2    (required) Meta-analysis result the other allele column name, default='A2'
+  
+  Either effect or Odds ratio should be given for IVW meta
+  
+  --masEff MASEFF  (conditional) Meta-analysis result effect (of A1) column name, default='Beta'
+  
+  --masOR MASOR    (conditional) Meta-analysis result Odds ratio (of A1) column name, default='OR'
+  
+  Either SE of effect or Odds ratio should be given for IVW meta
+  
+  --masisORSE      (conditional) Is the Meta-analysis result SE on OR scale, default on ln(OR) scale
+  
+  --masSE MASSE    (conditional) Meta-analysis result standard error (of Beta) column name
+    
+  --masP MASP      (required) Meta-analysis result p value (of A1) column name, required for Manhattan plot
+
+  --masV MASV      (optional) Meta-analysis result variance (of Beta) column name
+  
+  --masCHR MASCHR  (required) Chromosome number column name in original Meta-analysis results, required for Manhattan plot
+  
+  --masPOS MASPOS  (required) Genomic position column name in original Meta-analysis results, required for Manhattan plot
+  
+  Sepcific arguments for Sample size weighted meta-analysis
+  
+  --masN MASN      (conditional) Meta-analysis result Sample size column name
+  --masZ MASZ      (conditional) Meta-analysis result Z score column name
+  --ssN SSN        sub-study result Sample size column name
+  --ssZ SSZ        sub-study result Z score column name
+  
   --masSNP MASSNP  Meta-analysis result SNP column name
-  --ssf SSF        Sub-study result file name
+  --ssf SSF        Sub-study result file name (required)
   --ssA1 SSA1      sub-study result effect allele column name
   --ssA2 SSA2      sub-study result the other allele column name
   --ssEff SSEFF    sub-study result effect (of A1) column name
@@ -75,12 +108,11 @@ optional arguments:
   --ssSE SSSE      sub-study result standard error (of Beta) column name
   --ssisORSE       Is the sub-study result SE on OR scale, default on ln(OR) scale
   --ssV SSV        sub-study result variance (of Beta) column name
-  --ssN SSN        sub-study result Sample size column name
-  --ssZ SSZ        sub-study result Z score column name
+
   --ssSNP SSSNP    sub-study result SNP column name
   --top1 TOP1      max -log10(P) for original meta-analysis to plot in the manhattan (default from the data)
   --top2 TOP2      max -log10(P) for subtracted results to plot in the manhattan (default from the data)
   --flip           whether flip strand, using meta-analysis result as reference
   --noIVW          whether meta-analysis result is inverse variance weighted? Otherwise using sample size weighted
-  --out OUT        Result file prefix
-  ```
+  --out OUT        Result file prefix (required)
+
