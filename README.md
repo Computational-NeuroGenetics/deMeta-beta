@@ -43,7 +43,7 @@ Other cases during daily research may also poped up. For example, you have two s
                      [--ssZ SSZ] [--ssSNP SSSNP] [--top1 TOP1] [--top2 TOP2]
                      [--flip] [--noIVW] --out OUT`
 ```
-    From meta-results remove one contributing study.
+  From meta-results remove one contributing study.
 
     Applicable to:
         1. Inverse variance weighted meta-analysis
@@ -67,52 +67,77 @@ Optional arguments:
   
   --masf MASF      (required) Meta-analysis result file name
   
+  --masSNP MASSNP  (required) Meta-analysis result SNP column name
+  
   --masA1 MASA1    (required) Meta-analysis result effect allele column name, default='A1'
   
   --masA2 MASA2    (required) Meta-analysis result the other allele column name, default='A2'
   
-  Either effect or Odds ratio should be given for IVW meta
+  --ssf SSF        (required) Sub-study result file name
+  
+  --ssSNP SSSNP    (required) sub-study result SNP column name
+  
+  --ssA1 SSA1      (required) sub-study result effect allele column name
+  
+  --ssA2 SSA2      (required) sub-study result the other allele column name
+  
+  --flip           (optional) whether flip strand, using meta-analysis result as reference
+  
+  --out OUT        (required) Result file prefix (required)
+ 
+  
+- Sepcific arguments for sample size weighted meta-analysis:
+  Either effect/Odds ratio should be given for meta and sub-study, respectively
   
   --masEff MASEFF  (conditional) Meta-analysis result effect (of A1) column name, default='Beta'
   
   --masOR MASOR    (conditional) Meta-analysis result Odds ratio (of A1) column name, default='OR'
   
-  Either SE of effect or Odds ratio should be given for IVW meta
+  --ssEff SSEFF    (conditional) sub-study result effect (of A1) column name
+  
+  --ssOR SSOR      (conditional) sub-study result Odds ratio (of A1) column name
+  
+  
+  Either SE of effect/Odds ratio or variance should be given for meta and sub-study, respectively
   
   --masisORSE      (conditional) Is the Meta-analysis result SE on OR scale, default on ln(OR) scale
   
   --masSE MASSE    (conditional) Meta-analysis result standard error (of Beta) column name
-    
-  --masP MASP      (required) Meta-analysis result p value (of A1) column name, required for Manhattan plot
-
-  --masV MASV      (optional) Meta-analysis result variance (of Beta) column name
   
+  --ssSE SSSE      (conditional) sub-study result standard error (of Beta) column name
+  
+  --ssisORSE       (conditional) Is the sub-study result SE on OR scale, default on ln(OR) scale
+
+  --masV MASV      (conditional) Meta-analysis result variance (of Beta) column name
+  
+  --ssV SSV        (conditional) sub-study result variance (of Beta) column name
+
+ - Sepcific arguments for sample size weighted meta-analysis
+  
+  --masN MASN      (conditional) Meta-analysis result Sample size column name
+  
+  --masZ MASZ      (conditional) Meta-analysis result Z score column name
+  
+  --ssN SSN        (conditional) sub-study result Sample size column name
+  
+  --ssZ SSZ        (conditional) sub-study result Z score column name
+  
+  --noIVW          (required) whether meta-analysis result is inverse variance weighted? Otherwise using sample size weighted
+
+-  Arguments for Manhattan and Q-Q plot 
+
   --masCHR MASCHR  (required) Chromosome number column name in original Meta-analysis results, required for Manhattan plot
   
   --masPOS MASPOS  (required) Genomic position column name in original Meta-analysis results, required for Manhattan plot
-  
-  Sepcific arguments for Sample size weighted meta-analysis
-  
-  --masN MASN      (conditional) Meta-analysis result Sample size column name
-  --masZ MASZ      (conditional) Meta-analysis result Z score column name
-  --ssN SSN        sub-study result Sample size column name
-  --ssZ SSZ        sub-study result Z score column name
-  
-  --masSNP MASSNP  Meta-analysis result SNP column name
-  --ssf SSF        Sub-study result file name (required)
-  --ssA1 SSA1      sub-study result effect allele column name
-  --ssA2 SSA2      sub-study result the other allele column name
-  --ssEff SSEFF    sub-study result effect (of A1) column name
-  --ssOR SSOR      sub-study result Odds ratio (of A1) column name
-  --ssP SSP        sub-study result p value (of A1) column name
-  --ssSE SSSE      sub-study result standard error (of Beta) column name
-  --ssisORSE       Is the sub-study result SE on OR scale, default on ln(OR) scale
-  --ssV SSV        sub-study result variance (of Beta) column name
+   
+  --masP MASP      (required) Meta-analysis result p value (of A1) column name, required for Manhattan plot
 
-  --ssSNP SSSNP    sub-study result SNP column name
-  --top1 TOP1      max -log10(P) for original meta-analysis to plot in the manhattan (default from the data)
-  --top2 TOP2      max -log10(P) for subtracted results to plot in the manhattan (default from the data)
-  --flip           whether flip strand, using meta-analysis result as reference
-  --noIVW          whether meta-analysis result is inverse variance weighted? Otherwise using sample size weighted
-  --out OUT        Result file prefix (required)
+  --ssP SSP        (required) sub-study result p value (of A1) column name
+  
+  --top1 TOP1      (optional) max -log10(P) for original meta-analysis to plot in the manhattan (default from the data)
+  
+  --top2 TOP2      (optional) max -log10(P) for subtracted results to plot in the manhattan (default from the data)
+  
+# Output
+
 
