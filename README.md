@@ -41,7 +41,7 @@ Other cases during daily research may also poped up. For example, you have two s
                      [--ssA2 SSA2] [--ssEff SSEFF] [--ssOR SSOR] [--ssP SSP]
                      [--ssSE SSSE] [--ssisORSE] [--ssV SSV] [--ssN SSN]
                      [--ssZ SSZ] [--ssSNP SSSNP] [--top1 TOP1] [--top2 TOP2]
-                     [--flip] [--noIVW] --out OUT`
+                     [--flip] [--noIVW] --out OUT`        
 ```
   From meta-results remove one contributing study.
 
@@ -59,11 +59,11 @@ Other cases during daily research may also poped up. For example, you have two s
     Author: Yunpeng Wang, yunpeng.wng@gmail.com;
             Jiangming Sun, sunjiangming@gmail.com
     Data: 1st Aug, 2020
- ```
+```
 
 Optional arguments:
-
-  -h, --help       show this help message and exit
+ ```
+   -h, --help       show this help message and exit
   
   --masf MASF      (required) Meta-analysis result file name
   
@@ -84,11 +84,12 @@ Optional arguments:
   --flip           (optional) whether flip strand, using meta-analysis result as reference
   
   --out OUT        (required) Result file prefix (required)
- 
+  ```
   
-- Sepcific arguments for sample size weighted meta-analysis:
+- Sepcific arguments for sample size weighted meta-analysis: 
+``` 
   Either effect/Odds ratio should be given for meta and sub-study, respectively
-  
+
   --masEff MASEFF  (conditional) Meta-analysis result effect (of A1) column name, default='Beta'
   
   --masOR MASOR    (conditional) Meta-analysis result Odds ratio (of A1) column name, default='OR'
@@ -96,7 +97,6 @@ Optional arguments:
   --ssEff SSEFF    (conditional) sub-study result effect (of A1) column name
   
   --ssOR SSOR      (conditional) sub-study result Odds ratio (of A1) column name
-  
   
   Either SE of effect/Odds ratio or variance should be given for meta and sub-study, respectively
   
@@ -111,9 +111,10 @@ Optional arguments:
   --masV MASV      (conditional) Meta-analysis result variance (of Beta) column name
   
   --ssV SSV        (conditional) sub-study result variance (of Beta) column name
-
- - Sepcific arguments for sample size weighted meta-analysis
-  
+```
+ 
+- Sepcific arguments for sample size weighted meta-analysis
+```
   --masN MASN      (conditional) Meta-analysis result Sample size column name
   
   --masZ MASZ      (conditional) Meta-analysis result Z score column name
@@ -123,9 +124,10 @@ Optional arguments:
   --ssZ SSZ        (conditional) sub-study result Z score column name
   
   --noIVW          (required) whether meta-analysis result is inverse variance weighted? Otherwise using sample size weighted
+```
 
--  Arguments for Manhattan and Q-Q plot 
-
+-  Arguments for Manhattan and Q-Q plot
+```
   --masCHR MASCHR  (required) Chromosome number column name in original Meta-analysis results, required for Manhattan plot
   
   --masPOS MASPOS  (required) Genomic position column name in original Meta-analysis results, required for Manhattan plot
@@ -137,7 +139,11 @@ Optional arguments:
   --top1 TOP1      (optional) max -log10(P) for original meta-analysis to plot in the manhattan (default from the data)
   
   --top2 TOP2      (optional) max -log10(P) for subtracted results to plot in the manhattan (default from the data)
-  
+ ```
 # Output
+file1 desc1
+file2 desc2
 
-
+Example 
+.. figure:: https://raw.githubusercontent.com/ExaScience/smurff/master/docs/_static/matrix_factorization.svg?sanitize=true
+   :alt: Matrix Factorizaion
