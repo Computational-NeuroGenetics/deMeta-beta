@@ -145,5 +145,7 @@ file1 desc1
 file2 desc2
 
 Example 
-.. figure:: https://raw.githubusercontent.com/ExaScience/smurff/master/docs/_static/matrix_factorization.svg?sanitize=true
+.. figure:: https://raw.githubusercontent.com/sunjiangming/deMeta/master/test/Subtract_UKB_Out_manhattan.png?sanitize=true
+   :alt: Matrix Factorizaion
+.. figure:: https://raw.githubusercontent.com/sunjiangming/deMeta/master/test/Subtract_UKB_Out_qq.png?sanitize=true
    :alt: Matrix Factorizaion
