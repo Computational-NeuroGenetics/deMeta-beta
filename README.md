@@ -89,47 +89,47 @@ Optional arguments:
   
   --masOR MASOR    (conditional) Meta-analysis result Odds ratio (of A1) column name, default='OR'
   
-  --ssEff SSEFF    (conditional) sub-study result effect (of A1) column name
+  --ssEff SSEFF    (conditional) sub-study result effect (of A1) column name, default='beta'
   
-  --ssOR SSOR      (conditional) sub-study result Odds ratio (of A1) column name
+  --ssOR SSOR      (conditional) sub-study result Odds ratio (of A1) column name, default='or'
   
   Either SE of effect/Odds ratio or variance should be given for meta and sub-study, respectively
   
   --masisORSE      (conditional) Is the Meta-analysis result SE on OR scale, default on ln(OR) scale
   
-  --masSE MASSE    (conditional) Meta-analysis result standard error (of Beta) column name
+  --masSE MASSE    (conditional) Meta-analysis result standard error (of Beta) column name, default='SE'
   
-  --ssSE SSSE      (conditional) sub-study result standard error (of Beta) column name
+  --ssSE SSSE      (conditional) sub-study result standard error (of Beta) column name, default='se'
   
   --ssisORSE       (conditional) Is the sub-study result SE on OR scale, default on ln(OR) scale
 
-  --masV MASV      (conditional) Meta-analysis result variance (of Beta) column name
+  --masV MASV      (conditional) Meta-analysis result variance (of Beta) column name, default='VAR'
   
-  --ssV SSV        (conditional) sub-study result variance (of Beta) column name
+  --ssV SSV        (conditional) sub-study result variance (of Beta) column name, default='var'
 ```
  
 - Sepcific arguments for sample size weighted meta-analysis
 ```
-  --masN MASN      (conditional) Meta-analysis result Sample size column name
+  --masN MASN      (conditional) Meta-analysis result Sample size column name, default='N'
   
-  --masZ MASZ      (conditional) Meta-analysis result Z score column name
+  --masZ MASZ      (conditional) Meta-analysis result Z score column name, default='Zscore'
   
-  --ssN SSN        (conditional) sub-study result Sample size column name
+  --ssN SSN        (conditional) sub-study result Sample size column name, default='n'
   
-  --ssZ SSZ        (conditional) sub-study result Z score column name
+  --ssZ SSZ        (conditional) sub-study result Z score column name, default='zscore'
   
   --noIVW          (required) whether meta-analysis result is inverse variance weighted? Otherwise using sample size weighted
 ```
 
 -  Arguments for Manhattan and Q-Q plot
 ```
-  --masCHR MASCHR  (required) Chromosome number column name in original Meta-analysis results, required for Manhattan plot
+  --masCHR MASCHR  (required) Chromosome number column name in original Meta-analysis results, required for Manhattan plot, default='CHR'
   
-  --masPOS MASPOS  (required) Genomic position column name in original Meta-analysis results, required for Manhattan plot
+  --masPOS MASPOS  (required) Genomic position column name in original Meta-analysis results, required for Manhattan plot, default='POS'
    
-  --masP MASP      (required) Meta-analysis result p value (of A1) column name, required for Manhattan plot
+  --masP MASP      (required) Meta-analysis result p value (of A1) column name, required for Manhattan plot, default='P'
 
-  --ssP SSP        (required) sub-study result p value (of A1) column name
+  --ssP SSP        (required) sub-study result p value (of A1) column name, default='p'
   
   --top1 TOP1      (optional) max -log10(P) for original meta-analysis to plot in the manhattan (default from the data)
   
